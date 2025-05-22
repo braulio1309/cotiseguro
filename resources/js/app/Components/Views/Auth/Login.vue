@@ -17,8 +17,8 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 px-0">
-                                <h6 class="text-center mb-0">{{ $t('hi_there') }}</h6>
-                                <label class="text-center d-block">{{ $t('log_in_to_your_dashboard') }}</label>
+                                <h6 class="text-center mb-0">Bienvenido</h6>
+                                <label class="text-center d-block">Inicio de sesión</label>
                             </div>
                         </div>
                         <div class="form-row">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 px-0">
-                                <label for="login_password">{{ $t('password') }}</label>
+                                <label for="login_password">Contraseña</label>
                                 <app-input type="password"
                                            v-model="login.password"
                                            :show-password="true"
@@ -48,7 +48,7 @@
                         <div class="form-row">
                             <div class="form-group col-12 px-0">
                                 <app-load-more :preloader="preloader"
-                                               :label="$t('login')"
+                                               :label="'Iniciar sesión'"
                                                type="submit"
                                                class-name="btn btn-primary btn-block text-center"
                                                @submit="submit"/>
@@ -58,7 +58,7 @@
                             class="form-row form-row flex-column flex-md-row justify-content-center justify-content-md-between justify-content-lg-between">
                             <a :href="urlGenerator('/forget-password')"
                                class="bluish-text d-flex align-items-center justify-content-center justify-content-lg-end">
-                                <app-icon name="lock" class="pr-2"/> {{ $t('forgot_password') }}
+                                <app-icon name="lock" class="pr-2"/> 
                             </a>
                             <a v-if="configData.registration === 'on'" :href="urlGenerator('/user/register')"
                                class="bluish-text d-flex align-items-center justify-content-center justify-content-lg-end">

@@ -1,7 +1,7 @@
 <template>
     <div class="card card-with-shadow border-0 pb-primary">
         <div class="card-header d-flex align-items-center p-primary primary-card-color">
-            <h5 class="card-title d-inline-block mb-0">Agentes</h5>
+            <h5 class="card-title d-inline-block mb-0">{{ $t('users') }}</h5>
             <app-search @input="getSearchValue"/>
         </div>
         <div class="p-primary d-flex align-items-center primary-card-color">

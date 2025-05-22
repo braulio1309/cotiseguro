@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
                         <label for="user_first_name" class="text-left d-block mb-lg-2 mb-xl-0">
-                            {{ $t('first_name') }}
+                            Primer nombre
                         </label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
                         <label for="user_last_name" class="text-left d-block mb-lg-2 mb-xl-0">
-                            {{ $t('last_name') }}
+                            Apellido
                         </label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
-                        <label class="text-left d-block mb-lg-2 mb-xl-0">{{ $t('gender') }}</label>
+                        <label class="text-left d-block mb-lg-2 mb-xl-0">Género</label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
                         <app-input type="radio"
@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
                         <label for="user_contact" class="text-left d-block mb-lg-2 mb-xl-0">
-                            {{ $t('contact_number') }}
+                            Teléfono
                         </label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
@@ -84,7 +84,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
                         <label for="user_address" class="text-left d-block mb-lg-2 mb-xl-0">
-                            {{ $t('address') }}
+                           Dirección
                         </label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
@@ -99,7 +99,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-xl-3 d-flex align-items-center">
                         <label for="user_date_of_birth" class="text-left d-block mb-lg-2 mb-xl-0">
-                            {{ $t('date_of_birth') }}
+                            Fecha de nacimiento
                         </label>
                     </div>
                     <div class="col-lg-8 col-xl-8">
@@ -113,7 +113,7 @@
                 <div class="row">
                     <div class="col-12 action-buttons">
                         <button type="button" class="btn btn-primary mr-2" @click.prevent="submit">
-                            {{ $t('save') }}
+                            Guardar
                         </button>
                     </div>
                 </div>

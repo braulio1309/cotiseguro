@@ -48,7 +48,7 @@
                                                 <app-icon :name="'phone'"/>
                                             </div>
                                             <div class="media-body">
-                                                <p class="text-muted mb-0">{{ $t('contact') }}:</p>
+                                                <p class="text-muted mb-0">Contacto:</p>
                                                 <p class="mb-0">{{
                                                         user.loggedInUser.contact ? user.loggedInUser.contact : $t('not_available')
                                                     }}</p>
@@ -59,7 +59,7 @@
                                                 <app-icon :name="'map-pin'"/>
                                             </div>
                                             <div class="media-body">
-                                                <p class="text-muted mb-0">{{ $t('address') }}:</p>
+                                                <p class="text-muted mb-0">Dirección:</p>
                                                 <p class="mb-0">{{
                                                         user.loggedInUser.address ? user.loggedInUser.address : $t('not_available')
                                                     }}</p>
@@ -73,7 +73,7 @@
                                             <app-icon :name="'calendar'"/>
                                         </div>
                                         <div class="media-body">
-                                            <p class="text-muted mb-0">{{ $t('created') }}:</p>
+                                            <p class="text-muted mb-0">Creado:</p>
                                             <p class="mb-0">{{ user.loggedInUser.created_at }}</p>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@
                                             <app-icon :name="'gift'"/>
                                         </div>
                                         <div class="media-body">
-                                            <p class="text-muted mb-0">{{ $t('date_of_birth') }}:</p>
+                                            <p class="text-muted mb-0">Fecha de nacimiento:</p>
                                             <p class="mb-0">{{
                                                     user.loggedInUser.profile ? user.loggedInUser.profile.date_of_birth : $t('not_available')
                                                 }}</p>
@@ -115,23 +115,18 @@ export default {
             tabIcon: 'user',
             tabs: [
                 {
-                    'name': this.$t('personal_info'),
+                    'name': 'Información personal',
                     'title': this.$t('personal_info'),
                     'component': 'personal-information',
                     'permission': ''
                 },
                 {
-                    'name': this.$t('password_change'),
+                    'name': 'Cambio de contraseña',
                     'title': this.$t('password_change'),
                     'component': 'password-change',
                     'permission': ''
                 },
-                {
-                    'name': this.$t('social_links'),
-                    'title': this.$t('social_links'),
-                    'component': 'social-links',
-                    'permission': ''
-                }
+                
             ]
         }
     },

@@ -1,20 +1,8 @@
 <template>
     <div class="card card-with-shadow border-0 pb-primary">
         <div class="card-header d-flex align-items-center p-primary primary-card-color">
-            <h5 class="card-title d-inline-block mb-0">Agentes</h5>
+            <h5 class="card-title d-inline-block mb-0">Listado de Compañias</h5>
             <app-search @input="getSearchValue"/>
-        </div>
-        <div class="p-primary d-flex align-items-center primary-card-color">
-            <ul class="nav tab-filter-menu justify-content-flex-end">
-                <li class="nav-item" v-for="(item, index) in userFilterOptions" :key="index">
-                    <a href="#"
-                       class="nav-link py-0 font-size-default"
-                       :class="[value == item.id ? 'active' : index === 0 && value === '' ? 'active': '']"
-                       @click="getFilterValue(item.id)">
-                        {{ item.translated_name }}
-                    </a>
-                </li>
-            </ul>
         </div>
         <div class="card-body px-primary">
             <app-table :id="data.tableId"
@@ -39,39 +27,45 @@
                 value: '',
                 filteredData: {},
                 userTableOptions: {
-                    name: 'Users',
-                    url: actions.USERS,
+                    name: 'Porcinos',
+                    url: 'companias/listar',
                     tablePaddingClass: 'pt-0',
                     datatableWrapper: false,
-                    showHeader: false,
+                    showHeader: true,
                     tableShadow: false,
                     columns: [
                         {
-                            title: this.$t('user'),
-                            type: 'media-object',
-                            key: 'profile_picture',
-                            imgKey: "image",
-                            mediaTitleKey: 'full_name',
-                            mediaSubtitleKey: 'email',
-                            default: "",
+                            title: 'id',
+                            type: 'text',
+                            key: 'id',
                             isVisible: true,
                             modifier:(value, row)=>{
-                                return row.profile_picture ? row.profile_picture.full_url : '';
+                                return row.id;
                             }
                         },
                         {
-                            title: this.$t('status'),
-                            type: 'custom-html',
-                            key: 'status',
+                            title: 'nombre',
+                            type: 'text',
+                            key: 'nombre',
                             isVisible: true,
-                            modifier: (value) => {
-                                return `<span class="badge badge-sm badge-pill badge-${value.class}">${value.translated_name}</span>`;
+                            modifier: (value, row) => {
+                                return `$${row.nombre}`;
+                            }
+                        },
+                        
+                        {
+                            title: 'created_at',
+                            type: 'text',
+                            key: 'created_at',
+                            isVisible: true,
+                            modifier: (value, row) => {
+                                return `${row.created_at}`;
                             }
                         },
                         {
                             title: this.$t('action'),
                             type: 'action',
-                            key: 'invoice',
+                            key: 'id',
                             isVisible: true
                         },
                     ],
@@ -89,38 +83,16 @@
                             type: 'none',
                         },
                         {
-                            title: this.$t('delete'),
+                            title: 'Ficha',
                             type: 'none',
                         },
-                        {
-                            title: this.$t('active'),
-                            type: 'none',
-                            modifier: (row) => {
-                                const {status} = row;
-                                return status.name != "status_invited" && status.name != "status_active" ? true : false;
-                            }
-                        },
-                        {
-                            title: this.$t('de_activate'),
-                            type: 'none',
-                            modifier: (row) => {
-                                const {status} = row;
-                                return status.name != "status_invited" && status.name != "status_inactive" ? true :false;
-                            }
-                        },
-                        {
-                            title: this.$t('manage_role'),
-                            type: 'none',
-                        },
+                        
                     ],
                 },
-                userFilterOptions: [
-                    {id: '', name: 'all_users', translated_name: 'All Users'},
-                ],
             }
         },
         mounted(){
-            this.getStatuses();
+            //this.getStatuses();
         },
         methods: {
             getFilterValue(item) {

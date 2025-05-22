@@ -50,3 +50,8 @@ Vue.component('app-custom-table-modal', require('./Components/Views/Settings/Cus
 // Dynamic table
 Vue.component('app-custom-table-dynamic', require('./Components/Views/Demo/CustomTable/DynamicPage').default)
 
+Vue.component('companias', require('./Components/Views/Companias/Index').default);
+Vue.component('listadocompa', require('./Components/Views/ListadoCompanias/Index').default);
+
+Vue.component('cotizaciones', require('./Components/Views/Cotizaciones/Index').default);
+Vue.component('listadocoti', require('./Components/Views/ListadoCotizaciones/Index').default);

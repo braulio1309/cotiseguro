@@ -12,45 +12,49 @@ class SidebarComposer
         $table = CustomTable::all();
 
         $menu = [
-            [
+            /*[
                 'id' => 'dashboard-samples',
                 'icon' => 'pie-chart',
                 'name' => __t('dashboard'),
                 'permission' => authorize_any(['view_default', 'view_academy', 'view_ecmommerce', 'view_hospital', 'view_hrm']),
+            ],*/
+            [
+                'id' => 'Compañias',
+                'icon' => 'pie-chart',
+                'name' => 'Compañias',
+                'permission' => authorize_any(['view_default', 'view_academy', 'view_ecmommerce', 'view_hospital', 'view_hrm']),
                 'subMenu' => [
                     [
-                        'name' => trans('custom.default'),
-                        'url' => request()->root() . '/admin/dashboard',
+                        'name' => 'Registro',
+                        'url' => request()->root() . '/companias',
                         'permission' => auth()->user()->can('view_default'),
                     ],
                     [
-                        'name' => trans('custom.academy'),
-                        'url' => request()->root() . '/dashboard/academy',
-                        'permission' => auth()->user()->can('view_academy'),
-                    ],
-                    [
-                        'name' => trans('custom.e_commerce'),
-                        'url' => request()->root() . '/dashboard/ecommerce',
-                        'permission' => auth()->user()->can('view_ecmommerce'),
-                    ],
-                    [
-                        'name' => trans('custom.hospital'),
-                        'url' => request()->root() . '/dashboard/hospital',
-                        'permission' => auth()->user()->can('view_hospital'),
-                    ],
-                    [
-                        'name' => trans('custom.hrm'),
-                        'url' => request()->root() . '/dashboard/hrm',
-                        'permission' => auth()->user()->can('view_hrm'),
-                    ],
-                    [
-                        'name' => trans('custom.pos'),
-                        'url' => request()->root() . '/dashboard/pos',
-                        'permission' => auth()->user()->can('view_pos'),
+                        'name' => 'Listado',
+                        'url' => request()->root() . '/companias/listado',
+                        'permission' => auth()->user()->can('view_default'),
                     ],
                 ],
             ],
             [
+                'id' => 'Cotizaciones',
+                'icon' => 'pie-chart',
+                'name' => 'Cotizaciones',
+                'permission' => authorize_any(['view_default', 'view_academy', 'view_ecmommerce', 'view_hospital', 'view_hrm']),
+                'subMenu' => [
+                    [
+                        'name' => 'Registro',
+                        'url' => request()->root() . '/cotizaciones',
+                        'permission' => auth()->user()->can('view_default'),
+                    ],
+                    [
+                        'name' => 'Listado',
+                        'url' => request()->root() . '/cotizaciones/listado',
+                        'permission' => auth()->user()->can('view_default'),
+                    ],
+                ],
+            ],
+            /*[
                 'id' => 'auth-pages',
                 'icon' => 'power',
                 'name' => __t('authentication'),
@@ -72,8 +76,8 @@ class SidebarComposer
                         'permission' => auth()->user()->can('view_reset_password'),
                     ],
                 ],
-            ],
-            [
+            ],*/
+           /* [
                 'id' => 'tables',
                 'icon' => 'grid',
                 'name' => trans('custom.datatables'),
@@ -128,8 +132,8 @@ class SidebarComposer
                     }
                     return [];
                 })->toArray()),
-            ],
-            [
+            ],*/
+            /*[
                 'id' => 'forms',
                 'icon' => 'sidebar',
                 'name' => trans('custom.forms_and_fields'),
@@ -161,8 +165,8 @@ class SidebarComposer
                         'permission' => auth()->user()->can('view_form_text_editor'),
                     ],
                 ],
-            ],
-            [
+            ],*/
+            /*[
                 'id' => 'ui',
                 'icon' => 'trello',
                 'name' => trans('custom.ui_elements'),
@@ -232,8 +236,8 @@ class SidebarComposer
                         'permission' => auth()->user()->can('view_tabs'),
                     ]
                 ],
-            ],
-            [
+            ],*/
+           /* [
                 'id' => 'pages',
                 'icon' => 'copy',
                 'name' => trans('default.sample_pages'),
@@ -347,14 +351,14 @@ class SidebarComposer
                 'name' => trans('custom.payment_method'),
                 'url' => request()->root() . '/payment-view',
                 'permission' => auth()->user()->can('view_payment_method'),
-            ],
+            ],*/
             [
                 'icon' => 'user-check',
-                'name' => trans('custom.user_and_roles'),
+                'name' => 'Agentes',
                 'url' => request()->root() . '/users-and-roles',
                 'permission' => authorize_any(['view_users', 'view_roles', 'invite_user', 'create_roles']),
             ],
-            [
+            /*[
                 'icon' => 'settings',
                 'name' => trans('custom.settings'),
                 'url' => request()->root() . '/app-setting',
@@ -371,13 +375,7 @@ class SidebarComposer
                         'view_notification_templates',
                     ]
                 ),
-            ],
-            [
-                'icon' => 'book',
-                'name' => trans('default.documentation'),
-                'url' => request()->root() . '/documentation/index.html',
-                'permission' => auth()->user()->can('view_map'),
-            ],
+            ],*/
         ];
 
 
