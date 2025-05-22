@@ -82,10 +82,7 @@
                             title: this.$t('edit'),
                             type: 'none',
                         },
-                        {
-                            title: 'Ficha',
-                            type: 'none',
-                        },
+                        
                         
                     ],
                 },
